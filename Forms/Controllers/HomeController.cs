@@ -7,11 +7,11 @@ using DataBase;
 namespace Forms.Controllers
 {
     public class HomeController : Controller
-    {
+    {   [Authorize]
         public ActionResult Index()
         {
             //db d1 = new db();
-         
+           
             return View();
         }
 

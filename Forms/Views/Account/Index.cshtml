@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Forms.Models.User
+<div class="container vh-100 ">
+    <div class="row mt-5 h-100 justify-content-center" >
+        <div class="col-6 align-self-center ">
+           
+               
+                <div class="bg-white shadow">
+                    <div class="row">
+                        <div class="d-flex align-items-center justify-content-center col-4" style="background:url('https://image.freepik.com/free-vector/blue-abstract-background-with-wavy-forms_23-2147634036.jpg');">
+                          <h3 class="text-center text-white">MR-FORMS</h3>
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <form class="p-2" method="post" action="/Account/Login">
+                                <div class="form-group">
+
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    @Html.TextBoxFor(m => m.Email, new { type = "email", @class = "form-control", placeholder = "Enter email", required = "required" })
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Password</label>
+                                    @Html.TextBoxFor(m => m.Password, new { type = "password", @class = "form-control", placeholder = "Enter password", required="required" })
+                                </div>
+                                @Html.ValidationMessage("error", new { @class = "text-danger" })
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                <p>Don't have an account? <a href="/Account/SignUp">SignUp</a> </p>
+                               
+                            </form>
+                           
+                        </div>
+                    </div>
+                 
+                  
+                </div>
+          
+        </div>
+    </div>
+</div>
+
